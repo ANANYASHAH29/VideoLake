@@ -18,15 +18,49 @@ Not every video segment contributes equally to model performance. By selecting h
 - React + Tailwind CSS
 - Docker + Docker Compose
 
-## Prerequisites
+## Fresh laptop setup (from zero)
 
-Install these on the laptop before starting:
+Do these in order on a clean Windows machine. macOS/Linux equivalents are shown after each Windows step.
 
-- **Python 3.11** with `pip`
-- **Node.js 20+** with `npm`
-- **Git** (to clone the repo)
-- **FFmpeg** (add `ffmpeg` to your `PATH`; needed for clip extraction)
-- **Docker Desktop** (optional, but recommended for the one-command setup)
+### 1. Git
+- **Windows:** https://git-scm.com/download/win
+- **Linux:** `sudo apt install git`
+- **macOS:** `brew install git`
+
+### 2. Python 3.11
+- **Windows:** https://www.python.org/downloads/release/python-3119/  
+  Run the installer and check **"Add Python to PATH"**.
+- **Linux:** `sudo apt install python3.11 python3.11-pip`
+- **macOS:** `brew install python@3.11`
+
+### 3. Node.js 20 LTS
+- **Windows:** https://nodejs.org/en/download/  
+  Pick the **LTS** installer (it already includes `npm`).
+- **Linux/macOS:** https://nodejs.org/en/download/package-manager
+
+### 4. FFmpeg
+- **Windows:** download from https://www.gyan.dev/ffmpeg/builds/  
+  Extract to `C:\ffmpeg`, then add `C:\ffmpeg\bin` to your `PATH` in Environment Variables.
+- **Linux:** `sudo apt install ffmpeg`
+- **macOS:** `brew install ffmpeg`
+
+### 5. Docker Desktop (optional but recommended)
+- **Windows:** https://www.docker.com/products/docker-desktop/  
+  Enable the WSL2 backend when prompted. This gives you `docker compose`.
+- **Linux/macOS:** https://docs.docker.com/desktop/
+
+### Verify everything
+Open a **new** terminal and run:
+
+```powershell
+python --version      # 3.11.x
+python -m pip --version
+node --version        # v20.x
+npm --version
+git --version
+ffmpeg -version
+docker --version      # only if you installed Docker
+```
 
 ### What gets installed automatically
 
